@@ -221,7 +221,16 @@
   .submit-contact:hover { opacity:.85; }
   .contact-redirect { display:none; background:rgba(200,240,75,0.07); border:1px solid rgba(200,240,75,0.2); border-radius:8px; padding:16px; margin-top:14px; font-size:14px; color:var(--accent); line-height:1.7; }
 
-  /* PROCESSING */
+  /* REVIEWS */
+  .reviews-wrap { max-width:800px; margin:0 auto; padding:48px 24px; }
+  .reviews-wrap h1 { font-size:clamp(24px,4vw,36px); font-weight:900; letter-spacing:-1px; margin-bottom:8px; }
+  .reviews-wrap > p { color:var(--muted); font-size:14px; margin-bottom:32px; }
+  .reviews-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .review-card { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:20px; }
+  .review-stars { color:var(--accent); font-size:14px; margin-bottom:8px; letter-spacing:2px; }
+  .review-text { font-size:14px; color:var(--white); line-height:1.65; margin-bottom:12px; }
+  .review-author { font-size:12px; font-weight:700; color:var(--muted); }
+  .review-product { font-size:11px; color:#555; margin-top:2px; }
   .processing-wrap { max-width:400px; margin:100px auto; text-align:center; padding:0 24px; }
   .spinner { width:48px; height:48px; border:3px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation:spin 1s linear infinite; margin:0 auto 20px; }
   @keyframes spin { to { transform:rotate(360deg); } }
@@ -252,6 +261,7 @@
   <div class="nav-links">
     <button onclick="showPage('home')" id="nav-home" class="active">Home</button>
     <button onclick="showPage('products')" id="nav-products">Products</button>
+    <button onclick="window.open('reviews.html','_blank')">Reviews</button>
     <button onclick="showPage('contact')" id="nav-contact">Contact</button>
   </div>
   <div class="nav-right">
@@ -265,6 +275,7 @@
 <div class="mobile-menu" id="mobile-menu">
   <button onclick="showPage('home');toggleMobileMenu()">Home</button>
   <button onclick="showPage('products');toggleMobileMenu()">Products</button>
+  <button onclick="window.open('reviews.html','_blank');toggleMobileMenu()">Reviews</button>
   <button onclick="showPage('contact');toggleMobileMenu()">Contact</button>
 </div>
 
@@ -354,6 +365,52 @@
   </div>
 </div>
 
+<!-- REVIEWS PAGE -->
+<div class="page" id="page-reviews">
+  <div class="reviews-wrap">
+    <h1>Customer Reviews</h1>
+    <p>Real orders, real people. Here's what they had to say.</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">Came faster than I expected. Packaged clean, no issues. The Bubba Girl hits exactly how it should. Already on my second order.</div>
+        <div class="review-author">Marcus T.</div>
+        <div class="review-product">Nomad LA Live Rosin Disposable</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">Got the Boutiq triple tank and honestly wasn't sure what to expect. All three tanks slap. The Italian Ice one is my favorite by far.</div>
+        <div class="review-author">Destiny R.</div>
+        <div class="review-product">Boutiq Switch Glow Triple Tank</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">Ordered the Maui Labs 10 pack and it was worth every penny. Mixed pack had some really solid flavors in there. Support responded fast too.</div>
+        <div class="review-author">Jaylen M.</div>
+        <div class="review-product">Maui Labs Unhinged 10Pc</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">Used the Genkidd code and saved a few bucks. Order came in 3 days, discreet packaging like they said. No complaints at all, straight facts.</div>
+        <div class="review-author">Niyah P.</div>
+        <div class="review-product">Hidden Hills Flawless Edition 10Pc</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">Muha Meds bulk order came through. "Pick for me" actually came with a good variety. Will be ordering again for sure.</div>
+        <div class="review-author">Travis W.</div>
+        <div class="review-product">Muha Meds Gen 3 Bulk</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="review-text">Had a question about my order and hit up the Telegram. Got a response in like 10 minutes. Product was solid, customer service even better.</div>
+        <div class="review-author">Aaliyah K.</div>
+        <div class="review-product">Boutiq Switch Glow Triple Tank</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- CONTACT PAGE -->
 <div class="page" id="page-contact">
   <div class="contact-wrap">
@@ -370,6 +427,12 @@
       <h2>Discord Community</h2>
       <p>Join the server for order support, drops, and everything else going on.</p>
       <a href="https://discord.gg/8t8vpFN9xf" target="_blank" class="contact-link discord">Join the Discord</a>
+    </div>
+
+    <div class="contact-card">
+      <h2>Instagram</h2>
+      <p>Follow us at <strong>@yartland.store</strong> for updates and drops. We don't respond to DMs on Instagram — for order support or questions hit us on Telegram or Discord.</p>
+      <a href="https://www.instagram.com/yartland.store/" target="_blank" class="contact-link" style="background:#E1306C;">Visit Instagram</a>
     </div>
 
     <div class="contact-form-card">
@@ -647,14 +710,64 @@ const PRODUCTS = [
     flavors: ['Mixed Pack'],
   },
   {
-    id: 6,
-    brand: 'Hidden Hills',
-    name: 'VVS Liquid Diamond Disposable (10Pc)',
+    id: 7,
+    brand: 'Flwr Bar',
+    name: 'THC-A Diamond Reserve Disposable',
+    size: '3g',
+    price: 30.00,
+    stock: 207,
+    image: 'flwrbarcover.png',
+    flavors: ['Black Diesel Sludge', 'Original Genetics', 'Styrofoam Cup', 'Toad Venom', 'Zerbert'],
+  },
+  {
+    id: 8,
+    brand: 'Polk A Puff',
+    name: 'Pen Disposable',
     size: '2g',
-    price: 144.99,
-    stock: 1,
-    image: 'hiddenhills2cover.png',
-    flavors: ['Mixed Pack'],
+    price: 29.99,
+    stock: 314,
+    image: 'polkapuffcover.png',
+    flavors: ['Limoncello', 'Orange Creamsicle', 'Dragon Fruit Lemonade', 'Frozen Grape', 'Guava Cream', 'Lychee Sour Fizz', 'Mango Sorbet', 'Passion Fruit Guava', 'Pink Star', 'Sour Martinelli', 'Watermelon Aqua Fresco', 'Pick For Me'],
+  },
+  {
+    id: 9,
+    brand: 'Urb',
+    name: 'Aerodab 100 Jet Set Disposable',
+    size: '1.5g',
+    price: 38.99,
+    stock: 44,
+    image: 'urbaerodabcover.png',
+    flavors: ['Jealousy', 'Space Cake', 'Black Lime', 'Fruity Pebl Pie', 'Tangie Dream', 'Trop Gelato'],
+  },
+  {
+    id: 10,
+    brand: '',
+    name: 'Random 2.5G–6G Disposable (10Pc)',
+    size: '',
+    price: 210.00,
+    stock: 999,
+    image: 'RandomDispocover.png',
+    flavors: ['Assorted'],
+  },
+  {
+    id: 11,
+    brand: '',
+    name: 'Random 2G Disposable (10Pc)',
+    size: '',
+    price: 190.00,
+    stock: 999,
+    image: 'RandomDispocover.png',
+    flavors: ['Assorted'],
+  },
+  {
+    id: 12,
+    brand: '',
+    name: 'Random 1G Disposable (10Pc)',
+    size: '',
+    price: 145.00,
+    stock: 999,
+    image: 'RandomDispocover.png',
+    flavors: ['Assorted'],
   },
 ];
 
@@ -689,6 +802,9 @@ function showPage(id) {
   const nb = document.getElementById('nav-' + id);
   if (nb) nb.classList.add('active');
   window.scrollTo(0, 0);
+  // update URL hash
+  const hashMap = { home: '/', products: '/products', reviews: '/reviews', contact: '/contact', checkout: '/checkout', success: '/success' };
+  if (hashMap[id]) history.pushState({page: id}, '', hashMap[id]);
 }
 
 function toggleMobileMenu() {
@@ -1047,6 +1163,15 @@ function showToast(msg) {
 }
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
+// ─── URL ROUTING ─────────────────────────────────────────────────────────────
+const pathToPage = { '/': 'home', '/products': 'products', '/reviews': 'reviews', '/contact': 'contact' };
+window.addEventListener('popstate', e => { if (e.state && e.state.page) showPage(e.state.page); });
+(function initRoute() {
+  const path = window.location.pathname;
+  const page = pathToPage[path] || 'home';
+  if (page !== 'home') showPage(page);
+})();
+
 renderAll();
 updateCartUI();
 
