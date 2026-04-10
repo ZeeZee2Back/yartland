@@ -802,9 +802,6 @@ function showPage(id) {
   const nb = document.getElementById('nav-' + id);
   if (nb) nb.classList.add('active');
   window.scrollTo(0, 0);
-  // update URL hash
-  const hashMap = { home: '/', products: '/products', reviews: '/reviews', contact: '/contact', checkout: '/checkout', success: '/success' };
-  if (hashMap[id]) history.pushState({page: id}, '', hashMap[id]);
 }
 
 function toggleMobileMenu() {
@@ -1163,15 +1160,6 @@ function showToast(msg) {
 }
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
-// ─── URL ROUTING ─────────────────────────────────────────────────────────────
-const pathToPage = { '/': 'home', '/products': 'products', '/reviews': 'reviews', '/contact': 'contact' };
-window.addEventListener('popstate', e => { if (e.state && e.state.page) showPage(e.state.page); });
-(function initRoute() {
-  const path = window.location.pathname;
-  const page = pathToPage[path] || 'home';
-  if (page !== 'home') showPage(page);
-})();
-
 renderAll();
 updateCartUI();
 
