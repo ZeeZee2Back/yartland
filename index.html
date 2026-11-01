@@ -1,30 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yartland</title>
-    <style>
-        body {
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #ffffff;
-            font-family: Arial, sans-serif;
-            color: #000000;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YartLand | Home</title>
+<style>
+:root{--red:#e00000;--ink:#161616}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.site-header{height:118px;display:flex;align-items:center;justify-content:center;position:relative;padding:8px 20px;background:white}.logo{display:block;max-height:110px;max-width:min(48vw,440px);width:auto;object-fit:contain}.header-actions{position:absolute;right:max(20px,calc((100vw - 1100px)/2));top:50%;transform:translateY(-50%);display:flex;align-items:center;gap:17px}.discord-icon{width:24px;height:24px;object-fit:contain}.menu-button{width:32px;height:32px;border:1.5px solid #222;border-radius:3px;background:#fff;display:grid;place-items:center;font-size:22px;line-height:1}.announcement{height:31px;background:var(--red);color:white;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:700;letter-spacing:.02em;border-bottom:3px solid #fff}.banner{width:100%;height:auto;display:block;object-fit:contain}.hero{width:100%;overflow:hidden}.intro{text-align:center;padding:46px 20px 36px}.eyebrow{font-size:11px;color:var(--red);letter-spacing:2px;font-weight:800}.intro h1{font-size:clamp(30px,4vw,44px);margin:12px 0}.intro p{color:#777;font-size:14px;line-height:1.6}.buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:24px}.btn{border:1px solid var(--red);border-radius:4px;padding:13px 18px;background:var(--red);color:#fff;font-size:13px;font-weight:700}.btn.secondary{background:white;color:var(--red)}.cards{max-width:1060px;margin:20px auto 75px;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid #eee;border-radius:10px;padding:27px 24px;box-shadow:0 4px 22px #00000006}.card .symbol{color:var(--red);font-size:24px}.card h2{font-size:19px;margin:14px 0 8px}.card p{font-size:14px;line-height:1.6;color:#777}.footer{border-top:1px solid #eee;padding:25px;text-align:center;color:#777;font-size:12px}.drawer{position:fixed;z-index:20;right:0;top:0;height:100vh;width:min(320px,85vw);background:#fff;box-shadow:-8px 0 40px #0002;padding:28px;transform:translateX(105%);transition:transform .25s}.drawer.open{transform:translateX(0)}.drawer a{display:block;padding:14px 0;border-bottom:1px solid #eee;font-weight:700}.drawer-close{float:right;border:0;background:transparent;font-size:26px}.overlay{position:fixed;inset:0;background:#0005;z-index:19;display:none}.overlay.open{display:block}@media(max-width:650px){.site-header{height:85px}.logo{max-height:75px;max-width:58vw}.header-actions{right:14px;gap:10px}.discord-icon{width:21px;height:21px}.menu-button{width:29px;height:29px}.announcement{font-size:11px;height:29px}.cards{grid-template-columns:1fr}.intro{padding-top:35px}}
+.quick-buy{max-width:1060px;margin:0 auto;padding:38px 20px 48px}.quick-buy h2{text-align:center;font-size:clamp(34px,5vw,58px);margin:0 0 8px;color:#222}.quick-buy .subtitle{text-align:center;font-size:clamp(17px,2.5vw,30px);font-weight:700;color:#666;margin:0 auto 30px;max-width:900px}.quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,260px));gap:22px;justify-content:start}.quick-product{max-width:260px}.quick-placeholder{aspect-ratio:1/1;background:#f5f5f5;border:1px solid #e8e8e8;display:grid;place-items:center;color:#999;font-size:15px}.quick-product-image{display:block;width:100%;height:auto;aspect-ratio:1279/1137;object-fit:contain}.quick-product h3{font-size:17px;margin:12px 0 5px}.quick-product p{font-size:14px;color:#777;margin:0 0 6px}.product-rating{font-size:15px;color:#f5c518;letter-spacing:2px;margin:0 0 8px}.product-price{font-size:16px;font-weight:700;color:#222;margin:0 0 12px}.quick-link{display:block;background:#e21b0c;color:white;text-align:center;border-radius:25px;padding:10px;font-weight:700;font-size:13px;border:none;width:100%}@media(max-width:650px){.quick-buy{padding:30px 18px}.quick-grid{justify-content:center}.quick-buy .subtitle{margin-bottom:24px}}
+.start-section{background:#f2f2f2;padding:46px 20px 90px;text-align:center;color:#303030}.start-section h2{font-size:27px;margin:0 0 16px}.trust-line{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;font-size:13px;margin:0 auto 35px}.trust-line .red{color:#e21b0c;font-weight:bold}.start-section h3{font-size:23px;margin:30px 0 28px}.faq{max-width:625px;margin:auto;text-align:left}.faq-item{border-bottom:1px solid #d9d9d9}.faq-item summary{list-style:none;cursor:pointer;padding:15px 8px;font-size:15px;display:flex;align-items:center;gap:13px}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary:before{content:'⌄';font-size:23px;color:#999;line-height:0.7;transition:transform .2s}.faq-item[open] summary:before{transform:rotate(180deg)}.faq-answer{padding:0 12px 17px 35px;font-size:14px;line-height:1.6;color:#555}.faq-answer a{color:#d7190b;text-decoration:underline}@media(max-width:650px){.start-section{padding:38px 16px 70px}.trust-line{gap:10px 16px}.start-section h3{font-size:21px}}
 
-        h1 {
-            font-size: 2rem;
-            font-weight: normal;
-        }
-    </style>
+/* Modal Popups & Cart Drawer */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}.modal-overlay.open{display:flex}.modal{background:#fff;border-radius:12px;max-width:440px;width:100%;padding:24px;position:relative;box-shadow:0 10px 30px rgba(0,0,0,0.2);animation:modalFade .2s ease-out}.modal-close{position:absolute;top:15px;right:15px;border:none;background:none;font-size:22px;cursor:pointer;color:#888}@keyframes modalFade{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}.modal h3{margin:0 0 12px;font-size:20px}.modal label{display:block;font-size:13px;font-weight:700;margin:12px 0 6px}.modal select, .modal input{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;font-size:14px}.modal-btn{width:100%;background:var(--red);color:#fff;border:none;border-radius:25px;padding:12px;font-weight:700;font-size:14px;margin-top:18px;cursor:pointer}.modal-btn:hover{background:#c00000}
+
+/* Cart Icon Header Button */
+.cart-header-btn{position:relative;background:none;border:none;font-size:20px;cursor:pointer;display:flex;align-items:center}.cart-badge{position:absolute;top:-6px;right:-8px;background:var(--red);color:#fff;font-size:11px;font-weight:700;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center}
+
+/* Shopping Cart Drawer */
+.cart-drawer{position:fixed;top:0;right:0;width:min(380px,100vw);height:100vh;background:#fff;box-shadow:-5px 0 25px rgba(0,0,0,0.15);z-index:101;transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}.cart-drawer.open{transform:translateX(0)}.cart-header{padding:20px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center}.cart-header h3{margin:0;font-size:18px}.cart-body{padding:20px;flex:1;overflow-y:auto}.cart-item{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;padding-bottom:12px;margin-bottom:12px}.cart-item-title{font-weight:700;font-size:14px}.cart-item-sub{font-size:12px;color:#666}.cart-footer{padding:20px;border-top:1px solid #eee;background:#fafafa}.cart-summary-line{display:flex;justify-content:space-between;font-size:14px;color:#555;margin-bottom:8px}.cart-total{display:flex;justify-content:space-between;font-weight:700;font-size:18px;margin-top:10px;padding-top:10px;border-top:1px dashed #ccc;color:#161616}
+
+/* Discord Notice Box */
+.discord-notice{background:#f0f4fe;border:1.5px solid #5865F2;border-radius:10px;padding:18px;text-align:center;margin-top:10px}.discord-notice p{margin:0 0 12px;font-size:14px;line-height:1.5;color:#2c2f33}.discord-notice a{display:inline-block;background:#5865F2;color:#fff;padding:10px 18px;border-radius:20px;font-weight:700;font-size:13px}
+</style>
 </head>
 <body>
+<header class="site-header" id="top">
+  <a href="#top" aria-label="YartLand home"><img class="logo" src="images/MainLogo.png" alt="YartLand logo"></a>
+  <div class="header-actions">
+    <button class="cart-header-btn" id="openCartBtn" aria-label="Open Shopping Cart">🛒 <span class="cart-badge" id="cartBadge">0</span></button>
+    <a href="https://discord.gg/h4cgRkJU9y" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord"><img class="discord-icon" src="images/discordlogo.jpg" alt="Discord"></a>
+    <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+<div class="announcement">NEW UPDATES ON THE MENU</div>
 
-    <h1>Yartland Will Resume Soon</h1>
+<main>
+  <section class="hero" aria-label="YartLand banner">
+    <img class="banner" src="images/Banner.png" alt="YartLand promotional banner">
+  </section>
+  
+  <section class="quick-buy" id="quick-buy">
+    <h2>Quick Buy</h2>
+    <p class="subtitle">Buy High Quality Premium Top Shelf Projects With Discreet Shipping All 50 States</p>
+    <div class="quick-grid">
+      <!-- Product 1: Lollipops Live Resin 2g Disposables -->
+      <article class="quick-product">
+        <img class="quick-product-image" src="images/LRVMTFR.png" alt="Disposables product" width="1279" height="1137">
+        <h3>Disposables</h3>
+        <p>Lollipops Live Resin 2g Disposables</p>
+        <div class="product-rating">★★★★☆</div>
+        <div class="product-price">$38.99</div>
+        <button class="quick-link select-product-btn" data-id="lollipops" data-title="Lollipops 2g Disposable" data-price="38.99">Select options</button>
+      </article>
 
+      <!-- Product 2: Cali Clear 2G Liquid Diamond -->
+      <article class="quick-product">
+        <img class="quick-product-image" src="images/CCZBS1.png" alt="Cali Clear 2G Liquid Diamond product" width="1279" height="1137">
+        <h3>Disposable</h3>
+        <p>Cali Clear 2G Liquid Diamond</p>
+        <div class="product-rating">★★★★★</div>
+        <div class="product-price">$35.99</div>
+        <button class="quick-link select-product-btn" data-id="cali-clear" data-title="Cali Clear 2G Liquid Diamond" data-price="35.99">Select options</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="start-section" id="start">
+    <h2>Ready to get started?</h2>
+    <div class="trust-line">
+      <span><span class="red">●</span> 100% Authentic Products</span>
+      <span>Secure Payments</span>
+      <span><span class="red">★</span> Always Happy Customers</span>
+    </div>
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq">
+      <details class="faq-item"><summary>Is ordering from your website legal?</summary><div class="faq-answer">Laws and shipping restrictions vary by product and destination. Please check the applicable federal, state, and local requirements before ordering.</div></details>
+      <details class="faq-item"><summary>What payment methods do you accept?</summary><div class="faq-answer">Contact support for current payment information.</div></details>
+      <details class="faq-item"><summary>Where can I see reviews/vouches?</summary><div class="faq-answer">We're a new brand, but you can see vouches in our <a href="https://discord.gg/h4cgRkJU9y" target="_blank" rel="noopener noreferrer">Discord</a>.</div></details>
+      <details class="faq-item"><summary>I've paid for my order. What's next?</summary><div class="faq-answer">Contact support for order status and shipping information.</div></details>
+      <details class="faq-item"><summary>How can I contact support?</summary><div class="faq-answer">You can chat with us on <a href="https://discord.gg/h4cgRkJU9y" target="_blank" rel="noopener noreferrer">Discord</a>.</div></details>
+    </div>
+  </section>
+</main>
+
+<!-- Options Selection Modal -->
+<div class="modal-overlay" id="optionsModal">
+  <div class="modal">
+    <button class="modal-close" id="closeOptionsModal">×</button>
+    <h3 id="modalProductTitle">Select Options</h3>
+    <p style="font-size: 13px; color: #666; margin-top: -6px;" id="modalProductSub">Lollipops Live Resin 2g Disposables</p>
+    
+    <label for="flavorSelect">Flavor / Strain</label>
+    <select id="flavorSelect">
+      <!-- Options dynamically populated by JS -->
+    </select>
+    
+    <label for="qtyInput">Quantity</label>
+    <input type="number" id="qtyInput" value="1" min="1" max="10">
+    
+    <button class="modal-btn" id="addToCartBtn">Add to Cart - $38.99</button>
+  </div>
+</div>
+
+<!-- Cart Sidebar Drawer -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Shopping Cart</h3>
+    <button class="modal-close" id="closeCartBtn">×</button>
+  </div>
+  <div class="cart-body" id="cartItems">
+    <p style="color:#777; text-align:center; margin-top: 40px;">Your cart is empty.</p>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-summary-line">
+      <span>Subtotal:</span>
+      <span id="cartSubtotal">$0.00</span>
+    </div>
+    <div class="cart-summary-line">
+      <span>Shipping:</span>
+      <span id="cartShipping">$0.00</span>
+    </div>
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cartTotal">$0.00</span>
+    </div>
+    <button class="modal-btn" id="proceedCheckoutBtn">Proceed to Checkout</button>
+  </div>
+</div>
+
+<!-- Checkout Redirect Modal -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal">
+    <button class="modal-close" id="closeCheckoutModal">×</button>
+    <h3>Ready to Place Your Order?</h3>
+    <div class="discord-notice">
+      <p>To finalize and complete your order with shipping, please join our Discord server:</p>
+      <a href="https://discord.gg/y68TTWANmr" target="_blank" rel="noopener noreferrer">https://discord.gg/y68TTWANmr</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">© <span id="year"></span> YartLand. All rights reserved.</footer>
+<div class="overlay" id="overlay"></div>
+
+<nav class="drawer" id="drawer" aria-label="Site menu">
+  <button class="drawer-close" id="closeButton" aria-label="Close menu">×</button>
+  <h2>YartLand</h2>
+  <a href="#top">Home</a>
+  <a href="#quick-buy">Products</a>
+  <a href="#start">FAQ</a>
+  <a href="https://discord.gg/h4cgRkJU9y" target="_blank" rel="noopener noreferrer">Discord</a>
+</nav>
+
+<script>
+// Main Nav Drawer
+const drawer=document.getElementById('drawer'),overlay=document.getElementById('overlay'),menuButton=document.getElementById('menuButton');
+function setMenu(open){drawer.classList.toggle('open',open);overlay.classList.toggle('open',open);menuButton.setAttribute('aria-expanded',String(open))}
+menuButton.addEventListener('click',()=>setMenu(true));
+document.getElementById('closeButton').addEventListener('click',()=>setMenu(false));
+overlay.addEventListener('click',()=>{setMenu(false); closeModals();});
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+document.getElementById('year').textContent=new Date().getFullYear();
+
+// Configuration & Flavor Lists
+const SHIPPING_RATE = 8.99;
+const productFlavors = {
+  'lollipops': ['Gelato Cookies & Sherbert Zkittles'],
+  'cali-clear': [
+    'Za Za Blast',
+    'Dirty Sprite',
+    'Blue Dream',
+    'Ghost Train',
+    'Bubba Kush',
+    'Banana Mango',
+    'Pina Colada',
+    'London Drip',
+    'Fruitty Pebbles'
+  ]
+};
+
+let activeProductId = 'lollipops';
+let activeProductPrice = 38.99;
+let activeProductTitle = 'Lollipops 2g Disposable';
+
+// Shopping Cart State
+let cart = [];
+
+const optionsModal = document.getElementById('optionsModal');
+const checkoutModal = document.getElementById('checkoutModal');
+const cartDrawer = document.getElementById('cartDrawer');
+const qtyInput = document.getElementById('qtyInput');
+const addToCartBtn = document.getElementById('addToCartBtn');
+const modalProductTitle = document.getElementById('modalProductTitle');
+const modalProductSub = document.getElementById('modalProductSub');
+const flavorSelect = document.getElementById('flavorSelect');
+
+// Dynamic Add To Cart Button Text & Price Calculation
+function updateModalButtonPrice() {
+  let qty = parseInt(qtyInput.value, 10);
+  if (isNaN(qty) || qty < 1) qty = 1;
+  const subtotal = activeProductPrice * qty;
+  addToCartBtn.textContent = `Add to Cart - $${subtotal.toFixed(2)}`;
+}
+
+qtyInput.addEventListener('input', updateModalButtonPrice);
+
+// Populate Flavor Options Dynamic Function
+function populateFlavors(productId) {
+  flavorSelect.innerHTML = '';
+  const flavors = productFlavors[productId] || ['Default Flavor'];
+  flavors.forEach(f => {
+    const opt = document.createElement('option');
+    opt.value = f;
+    opt.textContent = f;
+    flavorSelect.appendChild(opt);
+  });
+}
+
+// Open Options Modal for selected product
+document.querySelectorAll('.select-product-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    activeProductId = e.target.getAttribute('data-id');
+    activeProductPrice = parseFloat(e.target.getAttribute('data-price'));
+    activeProductTitle = e.target.getAttribute('data-title');
+    
+    modalProductSub.textContent = activeProductTitle;
+    populateFlavors(activeProductId);
+    qtyInput.value = 1;
+    updateModalButtonPrice();
+    optionsModal.classList.add('open');
+  });
+});
+
+document.getElementById('closeOptionsModal').addEventListener('click', () => {
+  optionsModal.classList.remove('open');
+});
+
+// Cart Drawer Controls
+document.getElementById('openCartBtn').addEventListener('click', () => {
+  cartDrawer.classList.add('open');
+});
+document.getElementById('closeCartBtn').addEventListener('click', () => {
+  cartDrawer.classList.remove('open');
+});
+
+// Add to Cart Logic
+addToCartBtn.addEventListener('click', () => {
+  const flavor = flavorSelect.value;
+  let qty = parseInt(qtyInput.value, 10);
+  if (isNaN(qty) || qty < 1) qty = 1;
+  
+  cart.push({ title: activeProductTitle, flavor: flavor, price: activeProductPrice, qty: qty });
+  optionsModal.classList.remove('open');
+  updateCartUI();
+  cartDrawer.classList.add('open');
+});
+
+// Update Cart Display & Calculation Logic
+function updateCartUI() {
+  const cartItemsContainer = document.getElementById('cartItems');
+  const cartBadge = document.getElementById('cartBadge');
+  const cartSubtotal = document.getElementById('cartSubtotal');
+  const cartShipping = document.getElementById('cartShipping');
+  const cartTotal = document.getElementById('cartTotal');
+  
+  const totalItemCount = cart.reduce((sum, item) => sum + item.qty, 0);
+  cartBadge.textContent = totalItemCount;
+  
+  if (cart.length === 0) {
+    cartItemsContainer.innerHTML = '<p style="color:#777; text-align:center; margin-top: 40px;">Your cart is empty.</p>';
+    cartSubtotal.textContent = '$0.00';
+    cartShipping.textContent = '$0.00';
+    cartTotal.textContent = '$0.00';
+    return;
+  }
+  
+  let subtotal = 0;
+  cartItemsContainer.innerHTML = '';
+  cart.forEach((item) => {
+    const itemTotal = item.price * item.qty;
+    subtotal += itemTotal;
+    
+    const itemEl = document.createElement('div');
+    itemEl.className = 'cart-item';
+    itemEl.innerHTML = `
+      <div>
+        <div class="cart-item-title">${item.title}</div>
+        <div class="cart-item-sub">Flavor: ${item.flavor} | Qty: ${item.qty}</div>
+      </div>
+      <div><strong>$${itemTotal.toFixed(2)}</strong></div>
+    `;
+    cartItemsContainer.appendChild(itemEl);
+  });
+  
+  const shipping = SHIPPING_RATE;
+  const grandTotal = subtotal + shipping;
+
+  cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+  cartShipping.textContent = `$${shipping.toFixed(2)}`;
+  cartTotal.textContent = `$${grandTotal.toFixed(2)}`;
+}
+
+// Proceed to Checkout -> Triggers Discord Notice
+document.getElementById('proceedCheckoutBtn').addEventListener('click', () => {
+  if (cart.length === 0) {
+    alert('Your cart is empty!');
+    return;
+  }
+  cartDrawer.classList.remove('open');
+  checkoutModal.classList.add('open');
+});
+
+document.getElementById('closeCheckoutModal').addEventListener('click', () => {
+  checkoutModal.classList.remove('open');
+});
+
+function closeModals() {
+  optionsModal.classList.remove('open');
+  checkoutModal.classList.remove('open');
+  cartDrawer.classList.remove('open');
+}
+
+// Esc Key Listener
+document.addEventListener('keydown', e => {
+  if(e.key==='Escape') {
+    setMenu(false);
+    closeModals();
+  }
+});
+</script>
 </body>
 </html>
